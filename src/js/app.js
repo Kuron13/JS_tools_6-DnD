@@ -200,6 +200,7 @@ showFormButtons.forEach((btn) => {
 window.addEventListener('beforeunload', () => {
   console.log("Начало записи")
   let formData = {};
+  let messages = [];
   console.log('Колонки', mainForm)
   //[...mainForm.elements].forEach((column, columnIndex) => {
   columnAll.forEach((column, columnIndex) => {
