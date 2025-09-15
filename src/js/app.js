@@ -36,8 +36,8 @@ const onMouseOver = (e) => {
       e.target.after(phantomElement);
     }
   } else if (e.target.classList.contains('column-header')) {
-    column = e.target.closest('.column')
-    columnContent = column.querySelector('.column-content')
+    let column = e.target.closest('.column')
+    let columnContent = column.querySelector('.column-content')
     columnContent.prepend(phantomElement);
   }
 }
