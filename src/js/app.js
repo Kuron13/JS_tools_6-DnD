@@ -71,10 +71,6 @@ class Message {
         }
       }
     
-      if (!mouseUpItem.classList.contains('message')) {
-        itemDrop = mouseUpItem.closest('.message');
-      }
-  
       items.insertBefore(actualElement, phantomElement)
     
       actualElement.style.top = ''
@@ -211,14 +207,13 @@ class Form {
   //Сохранение сообщений при закрытии страницы
   saveData() {
     let formData = {};
-    let messages = [];
+    const messages = Array.from(columnContent.querySelectorAll('.message'));
   
     columns.forEach((column, columnIndex) => {
       let columnContent = column.querySelector('.column-content')
   
       formData[columnIndex] = formData[columnIndex] || {};
-      messages = Array.from(columnContent.querySelectorAll('.message'))
-      
+        
       messages.forEach((el, messageIndex) => {
   
         formData[columnIndex][messageIndex] = formData[columnIndex][messageIndex] || {}
