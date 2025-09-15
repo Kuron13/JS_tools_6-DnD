@@ -23,10 +23,11 @@ const onMouseOver = (e) => {
   actualElement.style.top = e.clientY - offsetY + 'px'
   actualElement.style.left = e.clientX - offsetX + 'px'
   
-  if (e.target.classList.contains('column-content')) {
-    e.target.append(phantomElement);
-  }
-  else if (e.target.classList.contains('message')) {
+  //if (e.target.classList.contains('column-content')) {
+  //  e.target.append(phantomElement);
+  //}
+  //else if (e.target.classList.contains('message')) {
+  if (e.target.classList.contains('message')) {
     //let insideX = e.clientX - e.target.getBoundingClientRect().left;
     let insideY = e.clientY - e.target.getBoundingClientRect().top;
     if (insideY < e.target.offsetHeight / 2) {
@@ -34,6 +35,10 @@ const onMouseOver = (e) => {
     } else {
       e.target.after(phantomElement);
     }
+  } else if (e.target.classList.contains('column-header')) {
+    column = e.target.closest('.column')
+    columnContent = column.querySelector('.column-content')
+    columnContent.prepend(phantomElement);
   }
 }
 
@@ -42,6 +47,8 @@ const onMouseUp = (e) => {
   let itemDrop = mouseUpItem;
   let items;
   let itemsColumn;
+  //offsetX = 0;
+  //offsetY = 0;
 
   if (mouseUpItem.classList.contains('column-content')) {
     console.log('Отпущено над колонкой контента')
@@ -66,8 +73,26 @@ const onMouseUp = (e) => {
   
   //const items = mouseUpItem.closest('.column-content');
   console.log('Ближайшая колонка к отпущенной кнопке: ', items)
-  items.insertBefore(actualElement, itemDrop)
+  console.log('Сообщение, на которое навелись: ', items)
   
+  
+  
+  //let closestMessage = mouseUpItem.closest('.message')
+  //let insideY = e.clientY - closestMessage.getBoundingClientRect().top;
+  //  if (insideY < closestMessage.offsetHeight / 2) {
+  //    items.insertBefore(actualElement, closestMessage);
+  //  } else {
+  //    items.inserAfter(actualElement, closestMessage);
+  //  }
+
+
+  //items.insertBefore(actualElement, itemDrop)
+
+  items.insertBefore(actualElement, phantomElement)
+  
+  actualElement.style.top = ''
+  actualElement.style.left = ''
+
   actualElement.classList.remove('item-dragged');
   actualElement = undefined;
   
