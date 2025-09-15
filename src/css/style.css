@@ -1,0 +1,138 @@
+main-form {
+  background-color: light gray;
+  display: inline-block;
+}
+
+.column {
+    z-index: 1000;
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    min-height: 200px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+    text-align: start;
+    line-break: auto;
+    font-size: .875rem;
+    word-wrap: break-word;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+}
+
+.columm-header {
+    padding: .5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+}
+
+.column-content {
+    display: block;
+    padding: .5rem .25rem;
+    color: #212529;
+    min-height: 180px;
+}
+
+.message {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    width: 220px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background: #f9f9f9;
+}
+
+.message-text {
+    flex: 1;
+}
+
+.btn-delete {
+    top: 5px;
+    right: 5px;
+    background: gray;
+    color: white;
+    width: 15px;
+    height: 15px;
+    font-size: 0.5rem;
+}
+
+.phantom {
+    border: 1px solid rgba(0, 0, 0, .2);
+    width: 220px;
+    min-height: 20px;
+    background: gray;
+}
+
+.column-footer {
+    display: block;
+    vertical-align: bottom;
+}
+
+.form {
+    display: block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.form-buttons {
+    display: inline-block;
+}
+
+.btn {
+    position: relative;
+    background: white;
+    color: dark gray;
+    width: 60px;
+    height: 25px;
+    font-size: 0.6rem;
+}
+
+.btn-open-form {
+    position: relative;
+    margin: 10px;
+    vertical-align: bottom;
+    background: white;
+    color: dark gray;
+    width: 150px;
+    height: 25px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.new-message {
+     width: 220px;
+}
+
+.btn-add {
+    position: relative;
+    background: green;
+    color: white;
+    width: 70px;
+    height: 25px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.btn-cancle {
+    position: relative;
+    background: red;
+    color: white;
+    width: 70px;
+    height: 25px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+
+.item-dragged {
+    border: 1px solid rgba(0, 0, 0, .2);
+    width: 220px;
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    background: #c0c0c0;
+}
