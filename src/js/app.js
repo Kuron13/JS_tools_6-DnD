@@ -30,7 +30,7 @@ class Message {
         e.preventDefault();
 
         if (e.target.classList.contains('btn-delete')) {
-            deleteMessage(e);
+            this.deleteMessage(e);
             return;
         }
         actualElement = e.target.closest('.message') || e.target;
@@ -56,7 +56,6 @@ class Message {
 
     onMouseUp = (e) => {
       const mouseUpItem = e.target;
-      let itemDrop = mouseUpItem;
       let items;
       let itemsColumn;
   
