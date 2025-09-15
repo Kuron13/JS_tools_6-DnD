@@ -207,11 +207,12 @@ class Form {
   //Сохранение сообщений при закрытии страницы
   saveData() {
     let formData = {};
-    const messages = Array.from(columnContent.querySelectorAll('.message'));
+    let columnContent;
+    let messages;
   
     columns.forEach((column, columnIndex) => {
-      let columnContent = column.querySelector('.column-content')
-  
+      columnContent = column.querySelector('.column-content')
+      messages = Array.from(columnContent.querySelectorAll('.message'));
       formData[columnIndex] = formData[columnIndex] || {};
         
       messages.forEach((el, messageIndex) => {
